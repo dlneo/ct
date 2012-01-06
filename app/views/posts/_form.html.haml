@@ -1,0 +1,42 @@
+= form_for @post do |f|
+  -if @post.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :cat_id
+    = f.collection_select(:cat_id, Cat.all, :id, :name)
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :url
+    = f.text_field :url    
+  .field
+    = f.label :status_id
+    = f.collection_select(:status_id, Status.order("name ASC").all, :id, :name)
+  = '-------------------------------------------------------------------------------------------------------------------------------'
+  = f.fields_for :content  do |c|
+    .field
+      = c.label :header, "Заголовок фрагмента"
+      = c.text_field :header
+    .field
+      = c.label :status_id, "Статус франмента"
+      = c.collection_select(:status_id, Status.order("name ASC").all, :id, :name)
+    .field
+      = c.label :ord, "Порядок в статье "
+      = c.text_field :ord#, :value => '1'
+    .field
+      = c.label :body, "Текст фрагмента"
+      %br
+      %br
+      = c.text_area :body, :size => "75x20"
+
+
+  %br
+    = f.submit 'Сохранить'
+  %br
+//    = c.hidden_field :user_id, :value => current_user.id

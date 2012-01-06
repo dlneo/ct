@@ -1,0 +1,12 @@
+%h1
+  = 'cleartest.ru'
+%img{:scr =>"images/header.jpg" }
+  
+#menu
+  %ul
+    %li
+      = active_link_to 'Анализы крови', root_path
+    %li
+      = active_link_to 'Анализ мочи'       
+    %li  
+      = active_link_to 'О сайте'

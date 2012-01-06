@@ -1,0 +1,8 @@
+- if params[:p] and @post.content.count>1
+  .bar
+    %h2 Содержание статьи
+    %ul 
+      - @post.content.each do |c|
+        - if c.header!=nil and c.header!='' 
+          %li
+            = link_to c.header, p_path(@post.url,c.id.to_s)

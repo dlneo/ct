@@ -1,0 +1,19 @@
+ru:
+  activerecord:
+    models:
+      post: Статья
+      content: Контент
+    attributes:
+      post:
+        title: Заголовок
+        cat_id: Категория
+        status_id: Статус
+      content:
+        header: Заголовок фрагмента
+        body: Текcт фрагмента
+        post_id: Статья
+        status_id: Статус
+        img: Рисунок
+        ord: Порядковый номер
+      
+    

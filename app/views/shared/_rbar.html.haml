@@ -1,0 +1,15 @@
+.bar
+  %h2 Рубрики
+  %ul 
+    %li
+      = 'Анализы крови'
+      %ul
+        - @barcats.where(:catowner => '101').each do |c|
+          %li
+            = link_to c.name, cat_path(c.url)
+    %li
+      = 'Журнал о здоровье'
+      %ul
+        - @barcats.where(:catowner => '20').each do |c|
+          %li
+            = link_to c.name, mag_path(c.url)

@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title
+      = yield :title 
+    = stylesheet_link_tag    "application" 
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+
+#container
+  #content
+    .l
+      #text.r
+        - if notice
+          %p.notice= notice
+        - if alert
+          %p.alert= alert
+        %h1= yield :title 
+        = yield
+      #lbar.l
+        = render 'shared/pbar'
+        = render 'shared/lbar'
+    #rbar.r
+      = render 'shared/cbar'
+      = render 'shared/rbar'
+  #header  	
+    = render 'layouts/header'
+  #footer
+    = render 'layouts/footer'

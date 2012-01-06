@@ -1,0 +1,13 @@
+-title ('Listing posts')
+%ul
+  - @posts.each do |post|
+    %li  
+      = post.title
+     
+      %br
+      = link_to 'Show', post_path(post.url)
+      = link_to 'Edit', edit_post_path(post)
+      = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+      = post.cat.name
+      = post.status.name
+

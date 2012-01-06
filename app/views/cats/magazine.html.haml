@@ -1,0 +1,20 @@
+- title('Журнал - "'+@cat.name+'"')
+.mag
+  %ul
+    - @cat.post.each do |p|
+      %li
+        = link_to p.title, p_path(p.url)
+      .content
+
+        = image_tag p.content.order("ord ASC").first.img.url(:medium) if p.content.order("ord ASC").first.img_file_name!=nil
+        %p
+          = sanitize(truncate(strip_tags(p.content.order("ord ASC").first.body),:length => 220))
+        -if user_signed_in?
+          .r
+            = link_to 'Редактировать статью', edit_post_path(p.url)
+        .c
+
+
+/= link_to 'Edit', edit_cat_path(@cat)
+/\|
+/= link_to 'Back', cats_path

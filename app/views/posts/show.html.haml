@@ -1,0 +1,28 @@
+- title(@post.title)
+- if user_signed_in?
+  = link_to 'Редактировать', edit_post_path(@post)
+
+
+.post
+  - @post.content.order("ord ASC").each do |content|
+    .content
+      %a{:name=>content.id.to_s}
+      - if content.header!=''  
+        %h2
+          = content.header
+
+      = image_tag content.img.url(:medium) if content.img_file_name!=nil
+      = sanitize content.body, :tags => @tags, :attributes => @atr
+      - if user_signed_in? 
+        = link_to 'Изменить', edit_post_content_path(content.post, content)
+        = link_to 'Удалить', [content.post, content], :confirm => 'Вы уверены?', :method => :delete, :remote => true, :class => "delete_mes"
+ 
+  .catatr
+    %p.category
+    %p.l
+      = 'Категория: '  
+      = link_to @post.cat.name, cat_path(@post.cat.url)
+  .c
+  = render 'posts/add_post'
+
+

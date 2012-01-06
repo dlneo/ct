@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Post:
+  = @content.post
+%p
+  %b Header:
+  = @content.header
+%p
+  %b Body:
+  = @content.body
+%p
+  %b Status:
+  = @content.status
+%p
+  %b Img:
+  = @content.img
+%p
+  %b Order:
+  = @content.order
+
+= link_to 'Edit', edit_content_path(@content)
+\|
+= link_to 'Back', contents_path

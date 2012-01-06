@@ -1,0 +1,27 @@
+= form_for ([@post, @content]), :html => { :multipart => true } do |f|
+  -if @content.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@content.errors.count, "error")} prohibited this content from being saved:"
+      %ul
+        - @content.errors.full_messages.each do |msg|
+          %li= msg
+
+
+  .field
+    = f.label :header
+    = f.text_field :header
+  .field
+    = f.label :body
+    %br
+    = f.text_area :body, :size => "65x6"
+  .field
+    = f.label :status_id
+    = f.collection_select(:status_id, Status.all, :id, :name)
+
+  .field
+    = f.label :ord
+    = f.number_field :ord
+  .field  
+    = f.file_field :img
+  .actions
+    = f.submit 'Сохранить'

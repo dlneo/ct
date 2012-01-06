@@ -1,0 +1,204 @@
+/* 
+    Document   : ct
+    Created on : 20.10.2011, 17:33:54
+    Author     : dL
+    Description:
+        Purpose of the stylesheet follows.
+*/
+$r:5px;
+$h:210px;
+.r5 {
+    border-radius:5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;   
+}
+.rt{ 
+    -webkit-border-top-left-radius: $r;
+    -webkit-border-top-right-radius: $r;
+    -moz-border-radius-topleft: $r;
+    -moz-border-radius-topright: $r;
+    border-top-left-radius: $r;
+    border-top-right-radius: $r;}
+a {
+  color: #AE3232;
+  &:visited {
+    color: #666; }
+  &:hover {
+    color: #1a1a1a;
+    text-decoration: none;} }
+ul, ol{
+  line-height:120%;
+  margin: 0px 0 0 20px;
+  //padding:0;
+}
+li{
+  padding:3px 0;
+  a{
+   
+  }
+  p{
+    margin: 0px;
+    padding:0;
+  }
+}
+
+body{
+    background: #F5F5F5;
+    position: relative;
+    
+}
+
+#container{
+    position: relative;
+    margin: 0 auto;
+    width: 1024px;
+}
+#content{
+    position: relative;
+    width: 1024px;
+    margin:10px 0 0 0;
+    clear: both;
+    top: $h;
+    display: block;
+    ///border: 1px solid blue;
+    float: left;
+}
+#text{
+    padding:0 10px 0 10px;
+    width: 610px;
+    min-height: 200px;
+    text-align:justify;
+   // 
+    img{
+      float:left;
+      margin: 0 10px 5px 0;
+    }
+    h1{
+      background:#FDDCD9;
+      border-top:1px solid #FBB4AE;
+      border-bottom:1px solid #FBB4AE;
+      font-size: 20px;
+      color: #555;
+      padding:5px 10px;
+      font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Sans-Serif;
+    }
+    h2{
+      color:#6B6B6B;
+    }
+}
+
+
+#rbar,#lbar{
+    width: 210px;
+    display: block;
+    font-size:13px;
+    .bar{
+       margin: 5px 0;
+       background:#EDEDED;
+       border: 1px solid #DADADA;
+       padding: 5px;
+       @extend .r5;
+    }
+    ul{
+      list-style-position:inside;
+      list-style-image: url(img/BlockContentBullets.png);
+      line-height:120%;
+      margin: 0px;
+      padding:0;
+    }
+    li{
+      padding:3px 0;
+      a{
+       
+      }
+    }
+    h2{
+      color:#414141;
+      font-size:18px;
+      margin: 5px 0;
+    }
+}
+
+#lbar{
+    width: 180px;
+
+}
+
+#header{
+    position: absolute;top: 0;left: 0;
+    height: $h;
+    width: 1024px;
+    display:block;
+    
+    h1{
+	width:200px;
+float:left;
+    }
+     img{
+background:url(img/header3.jpg);
+	float:right;
+
+      width:547px;
+      height:196px;
+      display:block;
+
+    }
+    
+}
+#menu {
+    clear:both;
+    border-bottom:3px solid #9A431D;
+    ul{
+      list-style-type: none;
+      margin: 0 0 3px 0;
+      li{
+        display: inline;
+        margin: 0 5px;
+
+        a{
+        padding:5px 12px;
+        background:#A42F2F;
+        @extend .rt;
+        cursor:pointer;
+        font-family:"Lucida Grande","Lucida Sans Unicode",Arial;
+        font-size:14px;
+        color:#fff;
+        text-decoration:none;
+        &:hover{
+          background:#B64A1D;
+        }
+        &.active {
+          background:#B6562E;
+        }
+
+        }
+      }
+    }
+      
+
+}
+
+
+
+#footer{
+    @extend .r5;
+    position: relative;
+    height: 40px;
+    width: 1000px;
+    margin: 0 7px;
+    padding: 5px;
+    display: block;
+    top: $h;
+    border: 1px solid #E9CBBE;
+    background:#EFD9CF;
+    float: left;
+    text-align: center;
+
+}
+/* Общие элементы*/
+
+/* Общие классы  */
+.l {float: left;}
+.r{float: right;}
+.c{clear:both;}
+.notice{color:green;}

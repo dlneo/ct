@@ -1,0 +1,11 @@
+- if user_signed_in? 
+  .bar
+    %h2
+      Личное меню
+    %ul
+      %li
+        = link_to 'Добавить статью', new_post_path
+      %li  
+        = link_to 'Все записи', posts_path
+      %li
+        = link_to 'Выход', destroy_user_session_path, :method => :delete

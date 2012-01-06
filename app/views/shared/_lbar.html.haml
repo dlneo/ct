@@ -1,0 +1,13 @@
+.bar
+  - if params[:p]
+    %h2
+      = 'Еще в рубрике'
+      - @sel = @barposts.where(:cat_id=>@post.cat_id).where('id != ?', @post.id).order("created_at ASC")
+  -else
+    %h2
+      = 'Случайные статьи'
+      - @sel=@barposts.order("RANDOM()")
+  %ul
+    - @sel.limit(10).each do |p|
+      %li
+        = link_to p.title, p_path(p.url)

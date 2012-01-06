@@ -1,0 +1,28 @@
+- if user_signed_in?   
+  .forms
+    %h2
+      = "Добавить фрагмент к статье:"
+    = form_for ([@post, @post.content.build]), :html => { :multipart => true } do |f|
+      .field
+        = f.label :header
+        %br 
+        = f.text_field :header 
+      .field
+        = f.label :body
+        %br
+        = f.text_area :body, :size => "65x12"
+      .field
+        = f.label :status_id
+        %br 
+        = f.collection_select(:status_id, Status.order("name ASC").all, :id, :name)
+      .field
+        = f.label :ord
+        %br 
+        = f.text_field :ord, :value => @post.content.count+1
+      .field  
+        = f.file_field :img
+      %br
+      .actions
+        = f.submit 'Добавить'
+  
+  

@@ -1,0 +1,302 @@
+/* 
+    Document   : ct
+    Created on : 20.10.2011, 17:33:54
+    Author     : dL
+    Description:
+        Purpose of the stylesheet follows.
+*/
+$r:5px;
+$h:200px;
+.r5 {
+    border-radius:5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;   
+}
+.rt{ 
+    -webkit-border-top-left-radius: $r;
+    -webkit-border-top-right-radius: $r;
+    -moz-border-radius-topleft: $r;
+    -moz-border-radius-topright: $r;
+    border-top-left-radius: $r;
+    border-top-right-radius: $r;}
+a {
+  color: #AE3232;
+  &:visited {
+    color: #666; }
+  &:hover {
+    color: #1a1a1a;
+    text-decoration: none;} }
+ul, ol{
+  list-style-position:inside;
+  line-height:140%;
+  margin: 0px 0 0 0px;
+  clear: both;
+  text-align:left;
+}
+li{
+  padding:3px 0;
+  a{
+   
+  }
+  p{
+    margin: 0px;
+    padding:0;
+  }
+}
+table, tr, td{
+  border:1px solid #D2C9C9;
+  margin:0px;
+  padding:0;
+  border-spacing:0px;
+}
+td{
+  padding:0 5px;
+}
+body{
+    margin:0;
+    pading:0;
+    position: relative;
+    background:#F5F5F5 url(img/bg.jpg) repeat-x top right;
+  }
+
+#container{
+    
+    position: relative;
+    margin: 0 auto;
+    width: 1024px;
+}
+#content{
+    position: relative;
+    width: 1024px;
+    margin:10px 0 0 0;
+    clear: both;
+    top: $h;
+    display: block;
+    ///border: 1px solid blue;
+    float: left;
+}
+#text{
+    padding:0 10px 0 15px;
+    width: 605px;
+    min-height: 200px;
+    text-align:justify;
+    font-size:14px;
+    p{
+      font-family:"Lucida Grande";
+      text-align:justify;
+      color:rgb(38, 38, 38);
+    }
+    .mag{
+      ul{
+        list-style-type:none;
+        line-height:140%;
+        margin:0;
+        padding:0;
+        .content{
+          min-height:170px;
+          padding:0 10px 0 0;
+        }
+        li{
+          //line-height:250%;
+
+          a{
+            line-height:120%;
+            color:#BC5224;
+            list-style-type:none;
+            font-size:22px;
+          }
+        }
+      }
+    }
+    .cat{
+      ul{
+        line-height:120%;
+        
+        li{
+          margin:3px 0;
+          
+          a{
+            font-size:15px;
+            color:red;
+          }
+        }
+      }
+    }
+   // 
+    img{
+      float:left;
+      margin: 0 15px 5px 0;
+      @extend .r5;
+      border:1px solid #FFD7C2;
+    }
+    h1{
+      background:#FFEEE5;
+      border-top:2px solid #FFD7C2;
+      border-bottom:2px solid #FFD7C2;
+      font-size: 22px;
+      color:#BC5224;
+      padding:5px 10px;
+      font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Sans-Serif;
+    }
+    h2{
+      font-size: 19px;
+      color:#6B6B6B;
+    }
+}
+
+$red:#A42F2F;
+#rbar,#lbar{
+    width: 210px;
+    display: block;
+    font-size:12px;
+    .bar{
+       margin: 5px 0;
+       background:#F5F0FF;
+       border: 1px solid #DADADA;
+       padding: 5px;
+       @extend .r5;
+    }
+    ul{
+
+      list-style-position:inside;
+      list-style-image: url(img/BlockContentBullets.png);
+      line-height:140%;
+      margin: 0 0px 0 0 ;
+      padding:0;
+    }
+    li{
+      padding:3px 0;
+      ul{
+        font-size:12px;
+        margin: 0 0 0 10px;
+        }
+      a{
+       
+      }
+    }
+    h2{
+      color:#414141;
+      font-size:16px;
+      margin: 5px 0;
+      text-align:left;
+    }
+}
+#rbar{
+  .bar{
+    border:1px solid #FFD7C2;
+    background:#FFEEE5;
+    padding: 5px 10px;
+    font-size:13px;
+  }
+  ul{
+    color:#cd3333;
+    font-weight:bold;
+  }
+  a{
+    color:#CD3333;
+    font-weight:normal;
+  }
+  
+}
+ 
+#lbar{
+    width: 180px;
+    .bar{
+      
+    }
+    a{
+      font-size:12px;
+    }
+}
+
+#header{
+    position: absolute;top: 0;left: 0;
+    height: $h;
+    width: 1024px;
+    display:block;
+    background:url(img/logo.jpg) no-repeat top right;
+    padding:0;
+    .title{
+      height:133px; 
+    	width:400px;
+      float:left;
+      margin:40px 0 0 40px;
+      font-size:39px;
+      font-weight:bold; 
+      color:#cd3333;
+      .icon{
+        margin: 8px 0 0 0;
+        background:url(img/TestTubes.png) no-repeat bottom left;
+        height:32px; 
+        width:32px;
+        display:block;
+        float:left;
+      }
+      .undertitle{
+        font-size:17px;
+        color:#cd3333;
+        font-weight:normal; 
+      }
+    }
+    #menu {
+
+    height:25px;
+    clear:both;
+    border-bottom:3px solid #9A431D;
+    ul{
+      list-style-type: none;
+      margin: 0 0 0px 0;
+      li{
+        display: inline;
+        margin: 0 5px;
+
+        a{
+        padding:5px 12px;
+        background:#A42F2F;
+        @extend .rt;
+        cursor:pointer;
+        font-family:"Lucida Grande","Lucida Sans Unicode",Arial;
+        font-size:15px;
+        color:#fff;
+        text-decoration:none;
+        &:hover{
+          background:#B64A1D;
+        }
+        &.active {
+          background:#B6562E;
+        }
+
+        }
+      }
+    }
+}
+
+    
+}
+
+
+
+
+#footer{
+    @extend .r5;
+    position: relative;
+    height: 40px;
+    width: 1000px;
+    margin: 0 7px;
+    padding: 5px;
+    display: block;
+    top: $h;
+    border: 1px solid #E9CBBE;
+    background:#EFD9CF;
+    float: left;
+    text-align: center;
+
+}
+/* Общие элементы*/
+
+/* Общие классы  */
+
+.l {float: left;}
+.r{float: right;}
+.c{clear:both;}
+.notice{color:green;}

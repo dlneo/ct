@@ -1,0 +1,27 @@
+%h1 Listing cats
+
+%table
+  %tr
+    %th Name
+    %th Url
+    %th Order
+    %th About
+    %th Status
+    %th
+    %th
+    %th
+
+  - @cats.each do |cat|
+    %tr
+      %td= cat.name
+      %td= cat.url
+      %td= cat.order
+      %td= cat.about
+      %td= cat.status
+      %td= link_to 'Show', cat
+      %td= link_to 'Edit', edit_cat_path(cat)
+      %td= link_to 'Destroy', cat, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Cat', new_cat_path

@@ -1,0 +1,14 @@
+- title('Рубрика "'+@cat.name+'"')
+.cat
+  %ul
+    - @cat.post.each do |p|
+      %li
+        = link_to p.title, p_path(p.url), :title =>sanitize(truncate(strip_tags(p.content.order("ord ASC").first.body),:length => 220))
+        -if user_signed_in?
+          = ' - '  
+          = link_to 'Редактировать', edit_post_path(p.url)
+
+
+/= link_to 'Edit', edit_cat_path(@cat)
+/\|
+/= link_to 'Back', cats_path
